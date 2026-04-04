@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="row">
+    <div>
+      <h2>Results</h2>
+      <p>Job ID: {{ job_id }}</p>
+    </div>
+    <div class="actions">
+      <a class="button" href="{{ url_for('report', job_id=job_id) }}">Extract PDF Report</a>
+      <a class="button secondary" href="{{ url_for('index') }}">Analyze another ZIP</a>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h3>Language Summary</h3>
+  <div class="summary-grid">
+    {% for lang, data in summary.items() %}
+      <div class="summary-box">
+        <strong>{{ lang|capitalize }}</strong>
+        <span>{{ data.count }} file(s)</span>
+        <span>Avg: {{ data.average_score }}%</span>
+      </div>
+    {% endfor %}
+    {% if summary|length == 0 %}
+      <p>No supported files found.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="card">
+  <h3>File Results</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>File Name</th>
+          <th>Code Name</th>
+          <th>Analyzer</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in results %}
+        <tr>
+          <td>{{ row.file_name }}</td>
+          <td>{{ row.language }}</td>
+          <td>{{ row.analyzer_name }}</td>
+          <td>{{ row.score }}%</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <h3>Rule Details</h3>
+  {% for row in results %}
+    <div class="file-block">
+      <h4>{{ row.file_name }}</h4>
+      <p><strong>Language:</strong> {{ row.language }} | <strong>Score:</strong> {{ row.score }}%</p>
+      <ul>
+        {% for finding in row.details.findings %}
+          <li><strong>{{ finding.rule }}</strong> — {{ finding.message }} ({{ finding.severity }}, -{{ finding.score_impact }})</li>
+        {% else %}
+          <li>No findings. Clean output.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</section>
+{% endblock %}

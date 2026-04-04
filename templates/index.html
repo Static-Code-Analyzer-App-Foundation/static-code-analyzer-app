@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Upload a ZIP file</h2>
+  <p>Supported file types: HTML, CSS, JavaScript, Python, React, MongoDB-related scripts and queries.</p>
+  <form action="{{ url_for('analyze') }}" method="post" enctype="multipart/form-data" class="upload-form">
+    <input type="file" name="zip_file" accept=".zip" required>
+    <button type="submit">Analyze Now</button>
+  </form>
+</section>
+
+<section class="card grid">
+  <div>
+    <h3>How it works</h3>
+    <ol>
+      <li>Upload ZIP</li>
+      <li>Extract to local workspace</li>
+      <li>Detect language by extension and content</li>
+      <li>Run the matching analyzer stack</li>
+      <li>View results and export PDF</li>
+    </ol>
+  </div>
+  <div>
+    <h3>Analyzer model</h3>
+    <ul>
+      <li>Each language has its own analyzer module</li>
+      <li>Each analyzer is split into rule files</li>
+      <li>Scores are calculated from accumulated rule penalties</li>
+      <li>Results are merged into one table</li>
+    </ul>
+  </div>
+</section>
+{% endblock %}
