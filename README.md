@@ -67,4 +67,5 @@ static/
 data/
 uploads/
 extracted/
-reports/
+reports//
+change successfully by saif 
