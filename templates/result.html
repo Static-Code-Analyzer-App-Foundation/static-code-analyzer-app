@@ -4,86 +4,157 @@
 
 {% block content %}
 <main class="report-shell">
-  <div class="container">
+  <div class="report-container">
 
-    <div class="header">
-      <h1>Enterprise Software Quality Report</h1>
-      <p>Automated Evaluation Summary</p>
-    </div>
-
-    <div class="card">
-      <h2>Overall Software Score</h2>
-      <div class="overall 
-        {% if overall|int >= 80 %}green
-        {% elif overall|int >= 50 %}yellow
-        {% else %}red
-        {% endif %}">
-        {{ overall }}%
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>Software-Level Metrics</h2>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Metric</th>
-              <th>Score (%)</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for key, value in software_metrics.items() %}
-            <tr>
-              <td>{{ key }}</td>
-              <td>{{ value }}%</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <h2 class="section-title">File-Level Analysis</h2>
-
-    {% for file in results %}
-    <div class="card">
-      <div class="file-title">{{ file.filename }}</div>
-
-      <div class="meta-block">
-        <p><strong>Language:</strong> {{ file.language }}</p>
-        <p><strong>Lines of Code:</strong> {{ file.loc }}</p>
-        <p><strong>Final Score:</strong> {{ file.score }}%</p>
-      </div>
-
-      <h4>Metric Breakdown</h4>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Metric</th>
-              <th>Score (%)</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for key, value in file.breakdown.items() %}
-            <tr>
-              <td>{{ key }}</td>
-              <td>{{ value }}%</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-    </div>
+    {% set ns = namespace(total=0) %}
+    {% for item in results %}
+      {% set ns.total = ns.total + (item.score | int) %}
     {% endfor %}
+    {% set overall = (ns.total / results|length) | round(2) if results|length else 0 %}
 
-    <div class="actions">
-      <a href="/download-report/{{ report_id }}" class="btn btn-dark">Download Full PDF Report</a>
-      <a href="/" class="btn btn-light">Evaluate Another File</a>
-    </div>
+    <section class="hero-banner">
+      <div>
+        <p class="eyebrow">Static Code Analyzer</p>
+        <h1>Enterprise Software Quality Report</h1>
+        <p class="hero-copy">Automated evaluation summary for job <span class="mono">{{ job_id }}</span>.</p>
+      </div>
+
+      <div class="hero-score">
+        <div class="score-label">Overall Score</div>
+        <div class="score-pill {% if overall >= 80 %}good{% elif overall >= 50 %}warn{% else %}bad{% endif %}">
+          {{ overall }}%
+        </div>
+      </div>
+    </section>
+
+    <section class="summary-grid">
+      <article class="summary-card">
+        <span class="summary-label">Files analyzed</span>
+        <strong>{{ results|length }}</strong>
+      </article>
+
+      <article class="summary-card">
+        <span class="summary-label">Languages detected</span>
+        <strong>{{ summary|length }}</strong>
+      </article>
+
+      <article class="summary-card">
+        <span class="summary-label">Average score</span>
+        <strong>{{ overall }}%</strong>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Language Summary</h2>
+        <p>Average score per detected language.</p>
+      </div>
+
+      {% if summary %}
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Language</th>
+                <th>Files</th>
+                <th>Average Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for lang, data in summary|dictsort %}
+                <tr>
+                  <td>{{ lang }}</td>
+                  <td>{{ data.count }}</td>
+                  <td>{{ data.average_score }}%</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% else %}
+        <div class="empty-state">No analyzable files were found in the uploaded ZIP.</div>
+      {% endif %}
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>File-Level Analysis</h2>
+        <p>Each scanned file with its analyzer output and detailed findings.</p>
+      </div>
+
+      {% if results %}
+        <div class="file-stack">
+          {% for item in results %}
+            {% set metrics = item.details.metrics | default({}) %}
+            {% set findings = item.details.findings | default([]) %}
+
+            <article class="file-card">
+              <div class="file-card-head">
+                <div>
+                  <h3 class="file-name">{{ item.file_name }}</h3>
+                  <p class="file-meta">
+                    <span><strong>Language:</strong> {{ item.language }}</span>
+                    <span><strong>Analyzer:</strong> {{ item.analyzer_name }}</span>
+                  </p>
+                </div>
+
+                <div class="file-score-wrap">
+                  <span class="file-score-label">Score</span>
+                  <span class="score-pill {% if item.score|int >= 80 %}good{% elif item.score|int >= 50 %}warn{% else %}bad{% endif %}">
+                    {{ item.score }}%
+                  </span>
+                </div>
+              </div>
+
+              <div class="metrics-grid">
+                {% for key, value in metrics.items() %}
+                  <div class="metric-item">
+                    <span class="metric-key">{{ key }}</span>
+                    <strong class="metric-value">{{ value }}</strong>
+                  </div>
+                {% endfor %}
+                {% if not metrics %}
+                  <div class="empty-state compact">No metrics returned for this file.</div>
+                {% endif %}
+              </div>
+
+              <div class="findings-block">
+                <h4>Findings</h4>
+
+                {% if findings %}
+                  <div class="findings-list">
+                    {% for finding in findings %}
+                      <div class="finding-row">
+                        <div class="finding-main">
+                          <span class="finding-rule">{{ finding.rule }}</span>
+                          <span class="finding-severity severity-{{ finding.severity|lower }}">{{ finding.severity }}</span>
+                        </div>
+                        <p class="finding-message">{{ finding.message }}</p>
+                        <div class="finding-meta">
+                          {% if finding.line is not none %}
+                            <span>Line {{ finding.line }}</span>
+                          {% endif %}
+                          <span>Impact: -{{ finding.score_impact }}</span>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% else %}
+                  <div class="empty-state compact">No findings recorded.</div>
+                {% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="empty-state">No file results to display.</div>
+      {% endif %}
+    </section>
+
+    <section class="actions">
+      <a href="{{ url_for('report', job_id=job_id) }}" class="btn btn-dark">Download Full PDF Report</a>
+      <a href="{{ url_for('index') }}" class="btn btn-light">Evaluate Another File</a>
+    </section>
 
     <div class="footer">
       Generated by Auto SQA Enterprise Platform
