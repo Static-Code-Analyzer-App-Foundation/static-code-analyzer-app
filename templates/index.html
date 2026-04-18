@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Software Quality Evaluator Intelligence</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
@@ -20,14 +22,24 @@
 
             <hr>
 
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-stack">
+                        {% for message in messages %}
+                            <div class="flash-message">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
             <div class="section-head">
                 <h2>Upload Project for Evaluation</h2>
-                <p>Submit a source code file and get a structured software quality report.</p>
+                <p>Submit a ZIP archive containing source code and get a structured software quality report.</p>
             </div>
 
-            <form action="/upload" enctype="multipart/form-data" method="post" class="upload-form" id="uploadForm">
-                <label><strong>Select Source Code File</strong></label>
-                <input type="file" name="file" id="file" required>
+            <form action="{{ url_for('analyze') }}" enctype="multipart/form-data" method="post" class="upload-form" id="uploadForm">
+                <label for="zip_file"><strong>Select ZIP Archive</strong></label>
+                <input type="file" name="zip_file" id="zip_file" accept=".zip,application/zip" required>
                 <button type="submit" id="submitBtn">Run Enterprise Evaluation</button>
             </form>
 
@@ -38,10 +50,10 @@
             </div>
 
             <ul class="feature-list">
-                <li>Comprehensive Software Score</li>
-                <li>Metric-Level Intelligence</li>
-                <li>File-by-File Quality Breakdown</li>
-                <li>Executive PDF Report</li>
+                <li>Comprehensive software score</li>
+                <li>Metric-level intelligence</li>
+                <li>File-by-file quality breakdown</li>
+                <li>Executive PDF report</li>
             </ul>
 
             <div class="footer">
