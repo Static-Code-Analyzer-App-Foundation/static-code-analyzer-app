@@ -1,33 +1,55 @@
-{% extends "base.html" %}
-{% block content %}
-<section class="card">
-  <h2>Upload a ZIP file</h2>
-  <p>Supported file types: HTML, CSS, JavaScript, Python, React, MongoDB-related scripts and queries.</p>
-  <form action="{{ url_for('analyze') }}" method="post" enctype="multipart/form-data" class="upload-form">
-    <input type="file" name="zip_file" accept=".zip" required>
-    <button type="submit">Analyze Now</button>
-  </form>
-</section>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Software Quality Evaluator Intelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="page-index">
 
-<section class="card grid">
-  <div>
-    <h3>How it works</h3>
-    <ol>
-      <li>Upload ZIP</li>
-      <li>Extract to local workspace</li>
-      <li>Detect language by extension and content</li>
-      <li>Run the matching analyzer stack</li>
-      <li>View results and export PDF</li>
-    </ol>
-  </div>
-  <div>
-    <h3>Analyzer model</h3>
-    <ul>
-      <li>Each language has its own analyzer module</li>
-      <li>Each analyzer is split into rule files</li>
-      <li>Scores are calculated from accumulated rule penalties</li>
-      <li>Results are merged into one table</li>
-    </ul>
-  </div>
-</section>
-{% endblock %}
+    <div class="page-overlay"></div>
+
+    <main class="center-wrap">
+        <section class="card">
+            <div class="hero-top">
+                <div class="brand-badge">SQA</div>
+                <div class="hero-text">
+                    <h1>Software Evaluator</h1>
+                    <p class="subtitle">Automated Software Quality Intelligence Platform</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="section-head">
+                <h2>Upload Project for Evaluation</h2>
+                <p>Submit a source code file and get a structured software quality report.</p>
+            </div>
+
+            <form action="/upload" enctype="multipart/form-data" method="post" class="upload-form" id="uploadForm">
+                <label><strong>Select Source Code File</strong></label>
+                <input type="file" name="file" id="file" required>
+                <button type="submit" id="submitBtn">Run Enterprise Evaluation</button>
+            </form>
+
+            <hr>
+
+            <div class="section-head">
+                <h3>What You Receive</h3>
+            </div>
+
+            <ul class="feature-list">
+                <li>Comprehensive Software Score</li>
+                <li>Metric-Level Intelligence</li>
+                <li>File-by-File Quality Breakdown</li>
+                <li>Executive PDF Report</li>
+            </ul>
+
+            <div class="footer">
+                Internal Quality Intelligence System
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
