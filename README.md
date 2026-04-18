@@ -44,7 +44,7 @@ A Flask-based web application for static code analysis. Upload a ZIP file contai
 ### 1) Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Static-Code-Analyzer-App-Foundation/static-code-analyzer-app.git
 cd static-code-analyzer-app
 ```
 
