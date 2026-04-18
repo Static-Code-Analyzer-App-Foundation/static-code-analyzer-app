@@ -1,145 +1,201 @@
- Static Code Analyzer
+# Static Code Analyzer
 
-Run with:
-A Flask-based web application for static code analysis. Upload ZIP files containing source code to get comprehensive analysis across multiple languages, with detailed scores and PDF reports.
+A Flask-based web application for static code analysis. Upload a ZIP file containing source code, and the app will securely extract it, analyze supported files across multiple languages, generate scores, and produce a PDF report.
 
-## 🚀 Quick Start
+## Features
 
-### Prerequisites
-- Python 3.8+
+* ZIP file upload and secure extraction
+* Multi-language detection and routing
+* Rule-based static analysis
+* Language-specific scoring system
+* Clean results dashboard
+* PDF report generation and download
+* Local data persistence
+* Cross-platform support for Windows, macOS, and Linux
 
-### Installation (Cross-Platform)
+## Supported Languages
 
-**Windows (PowerShell/cmd):**
+* Python
+* JavaScript
+* HTML
+* CSS
+* React
+* MongoDB-related files and configuration
+
+## Analysis Categories
+
+| Language   | Categories                                            |
+| ---------- | ----------------------------------------------------- |
+| Python     | Correctness, Efficiency, Maintenance, Security, Style |
+| JavaScript | Efficiency, Maintenance, Security, Style              |
+| HTML       | Accessibility, Maintenance, Performance, Security     |
+| CSS        | Maintenance, Performance, Security, Style             |
+| React      | Maintenance, Performance, Security, Style             |
+| MongoDB    | Maintenance, Performance, Security, Style             |
+
+## Requirements
+
+* Python 3.8 or higher
+* pip
+* A ZIP archive containing source code
+
+## Installation
+
+### 1) Clone the repository
+
+```bash
+git clone <your-repo-url>
+cd static-code-analyzer-app
+```
+
+### 2) Create and activate a virtual environment
+
+#### Windows (PowerShell)
+
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+#### Windows (cmd)
+
 ```cmd
 python -m venv .venv
-.venv\\Scripts\\activate
-pip install -r requirements.txt
+.venv\Scripts\activate
 ```
 
-**Linux/macOS:**
+#### macOS / Linux
+
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
-python app.py
 ```
-# 🛡️ Static Code Analyzer App
 
-A local web app that lets you upload a ZIP file of source code, extracts it safely, analyzes supported files with language-specific rule sets, and shows the results in a clean dashboard with PDF export.
-### Run the App
+### 3) Install Python dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4) Run the setup script
+
+After installing dependencies, run the setup script to install any additional tools, prepare databases, and complete the initial setup.
+
+#### macOS / Linux / WSL / Git Bash
+
+```bash
+bash run.sh
+```
+
+#### Windows native
+
+`run.sh` is a shell script, so on native Windows you should do one of the following:
+
+* Run it in Git Bash
+* Run it in WSL
+* Or manually execute the same setup steps listed inside `run.sh`
+
+## Run the Application
+
 ```bash
 python app.py
 ```
-Open http://127.0.0.1:5000
 
----
-## ✨ Features
+Then open:
 
-## ✨ What it does
-- ZIP file upload and secure extraction
-- Multi-language detection (Python, JS, HTML, CSS, React, MongoDB)
-- Rule-based static analysis per language
-- Aggregated scoring system (0-100%)
-- Interactive results dashboard
-- PDF report generation and download
-- Local data persistence
-
-- 📦 Upload a ZIP file containing code
-- 🗂️ Extract the project into a local workspace
-- 🧭 Route files by language/extension
-- 🔍 Run language-specific analyzers
-- 📊 Show results in a table with scores
-- 📄 Export the report as PDF
-- 💾 Store analysis data locally
-## 📚 Supported Languages & Analysis Categories
-
----
-| Language | Categories |
-|----------|------------|
-| Python | Correctness, Efficiency, Maintenance, Security, Style |
-| JavaScript | Efficiency, Maintenance, Security, Style |
-| HTML | Accessibility, Maintenance, Performance, Security |
-| CSS | Maintenance, Performance, Security, Style |
-| React | Maintenance, Performance, Security, Style |
-| MongoDB | Maintenance, Performance, Security, Style |
-
-## 🧠 Supported Languages
-## 🏗️ Architecture
-
-- Python
-- JavaScript
-- HTML
-- CSS
-- React
-- MongoDB-related code and config files
-1. **Upload & Extract**: ZIP → local workspace
-2. **Language Routing**: Extension/content → analyzer
-3. **Rule Execution**: Language-specific rule modules
-4. **Scoring**: Penalty accumulation → final score
-5. **Results**: Merged table + detailed findings
-6. **Export**: PDF generation
-
----
-## 📁 Project Structure
-
-## 🏗️ How it works
+```text
+http://127.0.0.1:5000
 ```
+
+## How It Works
+
+1. Upload a ZIP file containing source code.
+2. The app extracts the archive into a safe local workspace.
+3. Files are detected by extension and content.
+4. Each file is routed to the correct language analyzer.
+5. Rule checks are applied based on language-specific logic.
+6. Results are aggregated into a score.
+7. Findings are displayed in the dashboard.
+8. A PDF report can be generated and downloaded.
+
+## Project Structure
+
+```text
 static-code-analyzer-app/
-├── app.py                 # Flask app
-├── analyzer/              # Core analysis engine
-│   ├── analyzers/         # Language analyzers
+├── app.py
+├── run.sh
+├── analyzer/
+│   ├── analyzers/
 │   │   ├── css/
 │   │   ├── html/
 │   │   ├── javascript/
 │   │   ├── mongodb/
 │   │   ├── python/
 │   │   └── react/
-│   ├── base.py, utils.py  # Shared logic
-│   └── webapp.py          # Web integration
-├── templates/             # Jinja2 templates
+│   ├── base.py
+│   ├── utils.py
+│   └── webapp.py
+├── templates/
 │   ├── base.html
 │   ├── index.html
 │   └── result.html
-├── static/                # CSS/JS
-│   ├── css/style.css
-│   └── js/main.js
-├── data/                  # Persistent data
-├── uploads/               # User uploads
-├── reports/               # Generated PDFs
-├── requirements.txt       # Dependencies
+├── static/
+│   ├── css/
+│   └── js/
+├── data/
+├── uploads/
+├── extracted/
+├── reports/
+├── requirements.txt
 └── README.md
 ```
 
-1. User uploads a ZIP file.
-2. The app extracts it into a local folder.
-3. Files are detected by extension.
-4. Each language goes to its own analyzer pipeline.
-5. Each analyzer runs its own rule modules.
-6. Scores are collected and merged.
-7. Results appear on the result page.
-8. The user can download a PDF report.
-## 🔧 Development
+## Development
 
----
-Modify rules in `analyzer/analyzers/[lang]/` modules.
-Add new languages by creating `analyzer/analyzers/[newlang]/`.
-
-## 📁 Project Structure
+To add or modify rules, edit the relevant module inside:
 
 ```text
-app.py
-analyzer/
-├── analyzers/
-│   ├── python/
-│   ├── html/
-│   ├── css/
-│   ├── javascript/
-│   ├── react/
-│   └── mongodb/
-templates/
-static/
-data/
-uploads/
-extracted/
-reports//
+analyzer/analyzers/[language]/
+```
+
+To add a new language:
+
+1. Create a new analyzer folder.
+2. Add its rule set and scoring logic.
+3. Register it in the analyzer routing system.
+
+## Output
+
+The application provides:
+
+* Per-file analysis results
+* Category-wise scoring
+* Detailed findings
+* Final aggregated score
+* PDF export
+
+## Troubleshooting
+
+### `run.sh` does not work on Windows
+
+Use Git Bash or WSL, or manually run the setup commands inside the script.
+
+### ZIP file upload fails
+
+Make sure the uploaded file is a valid `.zip` archive and contains readable source files.
+
+### App does not start
+
+Confirm that:
+
+* The virtual environment is activated
+* Dependencies are installed
+* Python 3.8+ is being used
+
+## License
+
+Add your license here if needed.
+
+## Author
+
+Add your name or project team here.
