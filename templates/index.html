@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Quality Evaluator Intelligence</title>
+    <title>Code Quality Evaluator Intelligence</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body class="page-index">
@@ -13,10 +13,10 @@
     <main class="center-wrap">
         <section class="card">
             <div class="hero-top">
-                <div class="brand-badge">SQA</div>
+                <div class="brand-badge">CQA</div>
                 <div class="hero-text">
-                    <h1>Software Evaluator</h1>
-                    <p class="subtitle">Automated Software Quality Intelligence Platform</p>
+                    <h1>Code Evaluator</h1>
+                    <p class="subtitle">Automated Code Quality Intelligence Platform</p>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@
             <form action="{{ url_for('analyze') }}" enctype="multipart/form-data" method="post" class="upload-form" id="uploadForm">
                 <label for="zip_file"><strong>Select ZIP Archive</strong></label>
                 <input type="file" name="zip_file" id="zip_file" accept=".zip,application/zip" required>
-                <button type="submit" id="submitBtn">Run Enterprise Evaluation</button>
+                <button type="submit" id="submitBtn">Evaluate</button>
             </form>
 
             <hr>
@@ -50,7 +50,7 @@
             </div>
 
             <ul class="feature-list">
-                <li>Comprehensive software score</li>
+                <li>Comprehensive code score</li>
                 <li>Metric-level intelligence</li>
                 <li>File-by-file quality breakdown</li>
                 <li>Executive PDF report</li>
