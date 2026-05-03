@@ -1,111 +1,97 @@
-
----
-
-## `TODO.md`
-
-```md
 # ✅ TODO
 
 ## 🚀 Core Product
-- [ ] Improve language detection beyond file extension
-- [ ] Add deeper parsing for each supported language
-- [ ] Add weighted scoring per category
-- [ ] Add overall project score
-- [ ] Add folder-level aggregation
-- [ ] Add run history and comparison
+- [x] Improve language detection beyond file extension
+- [x] Add deeper parsing for each supported language
+- [x] Add weighted scoring per category
+- [x] Add overall project score
+- [x] Add folder-level aggregation
+- [x] Add run history and comparison
 
 ## 🐍 Python Analyzer
-- [ ] Detect unsafe imports
-- [ ] Detect hardcoded secrets
-- [ ] Flag weak exception handling
-- [ ] Flag insecure file handling
-- [ ] Improve correctness checks
-- [ ] Improve maintainability scoring
-- [ ] Add complexity analysis
+- [x] Detect unsafe imports
+- [x] Detect hardcoded secrets
+- [x] Flag weak exception handling
+- [x] Flag insecure file handling
+- [x] Improve correctness checks
+- [x] Improve maintainability scoring
+- [x] Add complexity analysis
 
 ## 🟨 JavaScript Analyzer
-- [ ] Detect unsafe DOM usage
-- [ ] Flag risky dynamic execution patterns
-- [ ] Check async/await misuse
-- [ ] Detect dead code and unused variables
-- [ ] Improve maintainability scoring
-- [ ] Add performance heuristics
+- [x] Detect unsafe DOM usage
+- [x] Flag risky dynamic execution patterns
+- [x] Check async/await misuse
+- [x] Detect dead code and unused variables
+- [x] Improve maintainability scoring
+- [x] Add performance heuristics
 
 ## 🌐 HTML Analyzer
-- [ ] Check semantic structure
-- [ ] Detect missing metadata
-- [ ] Review form labeling
-- [ ] Validate ARIA usage
-- [ ] Add accessibility scoring
-- [ ] Check document structure quality
+- [x] Check semantic structure
+- [x] Detect missing metadata
+- [x] Review form labeling
+- [x] Validate ARIA usage
+- [x] Add accessibility scoring
+- [x] Check document structure quality
 
 ## 🎨 CSS Analyzer
-- [ ] Detect duplicated rules
-- [ ] Flag excessive specificity
-- [ ] Check responsive design quality
-- [ ] Detect poor selector patterns
-- [ ] Add maintainability checks
-- [ ] Add performance-oriented checks
+- [x] Detect duplicated rules
+- [x] Flag excessive specificity
+- [x] Check responsive design quality
+- [x] Detect poor selector patterns
+- [x] Add maintainability checks
+- [x] Add performance-oriented checks
 
 ## ⚛️ React Analyzer
-- [ ] Detect anti-pattern component structure
-- [ ] Check hook usage
-- [ ] Review prop flow
-- [ ] Detect unsafe state handling
-- [ ] Improve rendering performance checks
-- [ ] Add code organization analysis
+- [x] Detect anti-pattern component structure
+- [x] Check hook usage
+- [x] Review prop flow
+- [x] Detect unsafe state handling
+- [x] Improve rendering performance checks
+- [x] Add code organization analysis
 
 ## 🍃 MongoDB Analyzer
-- [ ] Detect inefficient query patterns
-- [ ] Flag risky schema design
-- [ ] Review aggregation pipelines
-- [ ] Add indexing heuristics
-- [ ] Improve maintainability checks
-- [ ] Add query safety rules
+- [x] Detect inefficient query patterns
+- [x] Flag risky schema design
+- [x] Review aggregation pipelines
+- [x] Add indexing heuristics
+- [x] Improve maintainability checks
+- [x] Add query safety rules
 
 ## 🧱 Backend
-- [ ] Auto-create missing folders on startup
-- [ ] Improve database schema
-- [ ] Save analysis sessions
-- [ ] Add cleanup for old uploads
-- [ ] Add safer ZIP extraction
-- [ ] Add file size and file count limits
+- [x] Auto-create missing folders on startup
+- [x] Improve database schema
+- [x] Save analysis sessions
+- [x] Add cleanup for old uploads
+- [x] Add safer ZIP extraction
+- [x] Add file size and file count limits
 
 ## 🖥️ UI / UX
-- [ ] Make results table more interactive
-- [ ] Add filter by language
-- [ ] Add filter by score
-- [ ] Add file drill-down view
-- [ ] Add better progress indicators
-- [ ] Add dark mode
+- [x] Make results table more interactive
+- [x] Add filter by language
+- [x] Add filter by score
+- [x] Add file drill-down view
+- [x] Add better progress indicators
+- [x] Add dark mode
 
 ## 📄 Reports
-- [ ] Add HTML export
-- [ ] Add CSV export
-- [ ] Add JSON export
-- [ ] Add comparison between runs
-- [ ] Add charts and graphs
-- [ ] Add report preview before PDF download
+- [x] Add HTML export
+- [x] Add CSV export
+- [x] Add JSON export
+- [x] Add comparison between runs
+- [x] Add charts and graphs
+- [x] Add report preview before PDF download
 
 ## 🧪 Quality
-- [ ] Add unit tests for analyzers
-- [ ] Add integration tests for upload flow
-- [ ] Add tests for invalid ZIP files
-- [ ] Add tests for PDF generation
-- [ ] Add tests for unsupported file types
-- [ ] Add linting and formatting checks
-
-## 🚢 Deployment
-- [ ] Add production config
-- [ ] Add Dockerfile
-- [ ] Add Docker Compose setup
-- [ ] Add environment variable docs
-- [ ] Add server deployment guide
-- [ ] Add reverse proxy notes
+- [x] Add unit tests for analyzers
+- [x] Add integration tests for upload flow
+- [x] Add tests for invalid ZIP files
+- [x] Add tests for PDF generation
+- [x] Add tests for unsupported file types
+- [x] Add linting and formatting checks
 
 ## 🌟 Nice to Have
-- [ ] Add plugin support for future languages
-- [ ] Add rule editor UI
-- [ ] Add project dashboard
-- [ ] Add export/import of rule profiles
-- [ ] Add API endpoints for integration
+- [x] Add plugin support for future languages
+- [x] Add rule editor UI
+- [x] Add project dashboard
+- [x] Add export/import of rule profiles
+- [x] Add API endpoints for integration
