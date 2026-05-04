@@ -11,3 +11,4 @@ def analyze(text: str) -> list[RuleFinding]:
     if re.search(r"href\s*=\s*['\"]javascript:", text, re.I):
         findings.append(RuleFinding("security", "high", 20, "javascript: URLs can introduce XSS or unsafe navigation."))
     return findings
+
