@@ -16,7 +16,9 @@
       <div>
         <p class="eyebrow">Static Code Analyzer</p>
         <h1>Code Quality Report</h1>
-        <p class="hero-copy">Automated evaluation summary for job <span class="mono">{{ job_id }}</span>.</p>
+        <p class="hero-copy">
+          Automated evaluation summary for job <span class="mono">{{ job_id }}</span>.
+        </p>
       </div>
 
       <div class="hero-score">
@@ -79,7 +81,7 @@
     <section class="panel">
       <div class="panel-head">
         <h2>File-Level Analysis</h2>
-        <p>Each scanned file with its analyzer output and detailed findings.</p>
+        <p>Each file starts collapsed. Expand it to view the findings.</p>
       </div>
 
       {% if results %}
@@ -87,6 +89,7 @@
           {% for item in results %}
             {% set metrics = item.details.metrics | default({}) %}
             {% set findings = item.details.findings | default([]) %}
+            {% set finding_id = 'findings-' ~ loop.index %}
 
             <article class="file-card">
               <div class="file-card-head">
@@ -113,30 +116,45 @@
                     <strong class="metric-value">{{ value }}</strong>
                   </div>
                 {% endfor %}
+
                 {% if not metrics %}
                   <div class="empty-state compact">No metrics returned for this file.</div>
                 {% endif %}
               </div>
 
-              <div class="findings-block">
-                <h4>Findings</h4>
+              <div class="findings-toolbar">
+                <button
+                  type="button"
+                  class="findings-toggle"
+                  data-findings-toggle
+                  data-collapsed-label="Show {{ findings|length }} fault{{ 's' if findings|length != 1 else '' }}"
+                  data-expanded-label="Hide faults"
+                  aria-expanded="false"
+                  aria-controls="{{ finding_id }}"
+                >
+                  <span class="toggle-label">Show {{ findings|length }} fault{{ 's' if findings|length != 1 else '' }}</span>
+                  <span class="toggle-icon" aria-hidden="true">+</span>
+                </button>
+              </div>
 
+              <div class="findings-panel" id="{{ finding_id }}" hidden>
                 {% if findings %}
                   <div class="findings-list">
                     {% for finding in findings %}
-                      <div class="finding-row">
+                      <article class="finding-row">
                         <div class="finding-main">
                           <span class="finding-rule">{{ finding.rule }}</span>
-                          <span class="finding-severity severity-{{ finding.severity|lower }}">{{ finding.severity }}</span>
+                          <span class="finding-severity severity-{{ finding.severity|lower }}">
+                            {{ finding.severity }}
+                          </span>
                         </div>
+
                         <p class="finding-message">{{ finding.message }}</p>
+
                         <div class="finding-meta">
-                          {% if finding.line is not none %}
-                            <span>Line {{ finding.line }}</span>
-                          {% endif %}
                           <span>Impact: -{{ finding.score_impact }}</span>
                         </div>
-                      </div>
+                      </article>
                     {% endfor %}
                   </div>
                 {% else %}
@@ -162,4 +180,38 @@
 
   </div>
 </main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggles = document.querySelectorAll('[data-findings-toggle]');
+
+    toggles.forEach((button) => {
+      const panelId = button.getAttribute('aria-controls');
+      const panel = document.getElementById(panelId);
+      const label = button.querySelector('.toggle-label');
+      const icon = button.querySelector('.toggle-icon');
+
+      if (!panel) return;
+
+      const collapsedLabel = button.dataset.collapsedLabel || 'Show faults';
+      const expandedLabel = button.dataset.expandedLabel || 'Hide faults';
+
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        const nextExpanded = !expanded;
+
+        button.setAttribute('aria-expanded', String(nextExpanded));
+        panel.hidden = !nextExpanded;
+
+        if (label) {
+          label.textContent = nextExpanded ? expandedLabel : collapsedLabel;
+        }
+
+        if (icon) {
+          icon.textContent = nextExpanded ? '−' : '+';
+        }
+      });
+    });
+  });
+</script>
 {% endblock %}
