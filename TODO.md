@@ -95,3 +95,13 @@
 - [x] Add project dashboard
 - [x] Add export/import of rule profiles
 - [x] Add API endpoints for integration
+
+## ☁️ Deployment
+- [x] Add Procfile for Gunicorn
+- [x] Configure dynamic PORT via environment variable
+- [x] Add .env support via .env.example
+- [x] Auto-create required folders on startup
+- [x] Deploy to PythonAnywhere (free tier)
+- [x] Configure WSGI for production
+- [x] Set up persistent file storage
+- [x] Document deployment steps in README
