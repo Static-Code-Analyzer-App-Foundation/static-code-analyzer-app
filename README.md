@@ -2,17 +2,7 @@
 
 A Flask-based web application for static code analysis. Upload a ZIP file containing source code, and the app will securely extract it, analyze supported files across multiple languages, generate scores, and produce a PDF report.
 
-## 🚀 Live Demo
 
-<div align="center">
-
-| 🌐 Hosted On | 🔗 Link |
-|:---:|:---:|
-| PythonAnywhere | [mohammedsaifalsabah.pythonanywhere.com](https://mohammedsaifalsabah.pythonanywhere.com) |
-
-</div>
-
----
 
 ## 📚 Table of Contents
 
@@ -32,10 +22,17 @@ A Flask-based web application for static code analysis. Upload a ZIP file contai
 - [Author](#author)
 
 ---
-
 ## 🚀 Live Demo
 
-> 🌐 [https://mohammedsaifalsabah.pythonanywhere.com](https://mohammedsaifalsabah.pythonanywhere.com)
+<div align="center">
+
+| 🌐 Hosted On | 🔗 Link |
+|:---:|:---:|
+| PythonAnywhere | [mohammedsaifalsabah.pythonanywhere.com](https://mohammedsaifalsabah.pythonanywhere.com) |
+
+</div>
+
+---
 
 ---
 
