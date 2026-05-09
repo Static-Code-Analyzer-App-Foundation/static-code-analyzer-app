@@ -16,6 +16,7 @@ SUPPORTED_EXTENSIONS = {
     ".css": "css",
     ".js": "javascript",
     ".jsx": "react",
+    ".tsx": "react",
     ".mjs": "javascript",
     ".mongo": "mongodb",
     ".mongodb": "mongodb",
