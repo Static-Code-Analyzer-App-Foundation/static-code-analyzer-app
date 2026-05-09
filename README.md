@@ -3,25 +3,22 @@
 A Flask-based web application for static code analysis. Upload a ZIP file containing source code, and the app will securely extract it, analyze supported files across multiple languages, generate scores, and produce a PDF report.
 
 
-
 ## 📚 Table of Contents
 
-- [Features](#features)
-- [Supported Languages](#supported-languages)
-- [Analysis Categories](#analysis-categories)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Run the Application](#run-the-application)
-- [How It Works](#how-it-works)
-- [Project Structure](#project-structure)
-- [Deployment](#deployment)
-- [Development](#development)
-- [Output](#output)
-- [Troubleshooting](#troubleshooting)
-- [License](#license)
-- [Author](#author)
-
----
+- [✨ Features](#-features)
+- [🌍 Supported Languages](#-supported-languages)
+- [📊 Analysis Categories](#-analysis-categories)
+- [🛠 Requirements](#-requirements)
+- [⚙️ Installation](#️-installation)
+- [▶️ Run the Application](#️-run-the-application)
+- [🔍 How It Works](#-how-it-works)
+- [🗂 Project Structure](#-project-structure)
+- [☁️ Deployment](#️-deployment)
+- [🧑‍💻 Development](#-development)
+- [📤 Output](#-output)
+- [🐛 Troubleshooting](#-troubleshooting)
+- [📄 License](#-license)
+- [👤 Author](#-author)
 ## 🚀 Live Demo
 
 <div align="center">
