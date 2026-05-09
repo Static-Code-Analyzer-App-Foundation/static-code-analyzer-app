@@ -19,6 +19,9 @@ A Flask-based web application for static code analysis. Upload a ZIP file contai
 - [🐛 Troubleshooting](#-troubleshooting)
 - [📄 License](#-license)
 - [👤 Author](#-author)
+- ---
+
+---
 ## 🚀 Live Demo
 
 <div align="center">
