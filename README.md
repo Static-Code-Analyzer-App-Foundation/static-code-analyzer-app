@@ -2,27 +2,60 @@
 
 A Flask-based web application for static code analysis. Upload a ZIP file containing source code, and the app will securely extract it, analyze supported files across multiple languages, generate scores, and produce a PDF report.
 
-## Features
+🌐 **Live Demo:** [mohammedsaifalsabah.pythonanywhere.com](https://mohammedsaifalsabah.pythonanywhere.com)
 
-* ZIP file upload and secure extraction
-* Multi-language detection and routing
-* Rule-based static analysis
-* Language-specific scoring system
-* Clean results dashboard
-* PDF report generation and download
-* Local data persistence
-* Cross-platform support for Windows, macOS, and Linux
+---
 
-## Supported Languages
+## 📚 Table of Contents
 
-* Python
-* JavaScript
-* HTML
-* CSS
-* React
-* MongoDB-related files and configuration
+- [Features](#features)
+- [Supported Languages](#supported-languages)
+- [Analysis Categories](#analysis-categories)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Run the Application](#run-the-application)
+- [How It Works](#how-it-works)
+- [Project Structure](#project-structure)
+- [Deployment](#deployment)
+- [Development](#development)
+- [Output](#output)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
+- [Author](#author)
 
-## Analysis Categories
+---
+
+## 🚀 Live Demo
+
+> 🌐 [https://mohammedsaifalsabah.pythonanywhere.com](https://mohammedsaifalsabah.pythonanywhere.com)
+
+---
+
+## ✨ Features
+
+- ZIP file upload and secure extraction
+- Multi-language detection and routing
+- Rule-based static analysis
+- Language-specific scoring system
+- Clean results dashboard
+- PDF report generation and download
+- Local data persistence
+- Cross-platform support for Windows, macOS, and Linux
+
+---
+
+## 🌍 Supported Languages
+
+- Python
+- JavaScript
+- HTML
+- CSS
+- React
+- MongoDB-related files and configuration
+
+---
+
+## 📊 Analysis Categories
 
 | Language   | Categories                                            |
 | ---------- | ----------------------------------------------------- |
@@ -33,13 +66,17 @@ A Flask-based web application for static code analysis. Upload a ZIP file contai
 | React      | Maintenance, Performance, Security, Style             |
 | MongoDB    | Maintenance, Performance, Security, Style             |
 
-## Requirements
+---
 
-* Python 3.8 or higher
-* pip
-* A ZIP archive containing source code
+## 🛠 Requirements
 
-## Installation
+- Python 3.8 or higher
+- pip
+- A ZIP archive containing source code
+
+---
+
+## ⚙️ Installation
 
 ### 1) Clone the repository
 
@@ -79,8 +116,6 @@ pip install -r requirements.txt
 
 ### 4) Run the setup script
 
-After installing dependencies, run the setup script to install any additional tools, prepare databases, and complete the initial setup.
-
 #### macOS / Linux / WSL / Git Bash
 
 ```bash
@@ -91,23 +126,24 @@ bash run.sh
 
 `run.sh` is a shell script, so on native Windows you should do one of the following:
 
-* Run it in Git Bash
-* Run it in WSL
-* Or manually execute the same setup steps listed inside `run.sh`
+- Run it in Git Bash
+- Run it in WSL
+- Or manually execute the same setup steps listed inside `run.sh`
 
-## Run the Application
+---
+
+## ▶️ Run the Application
 
 ```bash
 python app.py
 ```
 
 Then open:
-
-```text
 http://127.0.0.1:5000
-```
 
-## How It Works
+---
+
+## 🔍 How It Works
 
 1. Upload a ZIP file containing source code.
 2. The app extracts the archive into a safe local workspace.
@@ -118,9 +154,9 @@ http://127.0.0.1:5000
 7. Findings are displayed in the dashboard.
 8. A PDF report can be generated and downloaded.
 
-## Project Structure
+---
 
-```text
+## 🗂 Project Structure
 static-code-analyzer-app/
 ├── app.py
 ├── run.sh
@@ -148,15 +184,30 @@ static-code-analyzer-app/
 ├── reports/
 ├── requirements.txt
 └── README.md
-```
 
-## Development
+---
+
+## ☁️ Deployment
+
+This app is deployed on **PythonAnywhere** (free tier).
+
+🌐 Live at: [mohammedsaifalsabah.pythonanywhere.com](https://mohammedsaifalsabah.pythonanywhere.com)
+
+To deploy your own instance:
+
+1. Create a free account at [pythonanywhere.com](https://www.pythonanywhere.com)
+2. Open a Bash console and clone the repo
+3. Create a virtual environment and install dependencies
+4. Configure a Flask web app via the Web tab
+5. Set the WSGI file to point to `app.py`
+6. Reload the web app
+
+---
+
+## 🧑‍💻 Development
 
 To add or modify rules, edit the relevant module inside:
-
-```text
 analyzer/analyzers/[language]/
-```
 
 To add a new language:
 
@@ -164,38 +215,42 @@ To add a new language:
 2. Add its rule set and scoring logic.
 3. Register it in the analyzer routing system.
 
-## Output
+---
+
+## 📤 Output
 
 The application provides:
 
-* Per-file analysis results
-* Category-wise scoring
-* Detailed findings
-* Final aggregated score
-* PDF export
+- Per-file analysis results
+- Category-wise scoring
+- Detailed findings
+- Final aggregated score
+- PDF export
 
-## Troubleshooting
+---
+
+## 🐛 Troubleshooting
 
 ### `run.sh` does not work on Windows
-
 Use Git Bash or WSL, or manually run the setup commands inside the script.
 
 ### ZIP file upload fails
-
 Make sure the uploaded file is a valid `.zip` archive and contains readable source files.
 
 ### App does not start
-
 Confirm that:
+- The virtual environment is activated
+- Dependencies are installed
+- Python 3.8+ is being used
 
-* The virtual environment is activated
-* Dependencies are installed
-* Python 3.8+ is being used
+---
 
-## License
+## 📄 License
 
 Add your license here if needed.
 
-## Author
+---
+
+## 👤 Author
 
 Add your name or project team here.
