@@ -157,35 +157,41 @@ http://127.0.0.1:5000
 ---
 
 ## 🗂 Project Structure
-static-code-analyzer-app/
-├── app.py
-├── run.sh
-├── analyzer/
-│   ├── analyzers/
-│   │   ├── css/
-│   │   ├── html/
-│   │   ├── javascript/
-│   │   ├── mongodb/
-│   │   ├── python/
-│   │   └── react/
-│   ├── base.py
-│   ├── utils.py
-│   └── webapp.py
-├── templates/
-│   ├── base.html
-│   ├── index.html
-│   └── result.html
-├── static/
-│   ├── css/
-│   └── js/
-├── data/
-├── uploads/
-├── extracted/
-├── reports/
-├── requirements.txt
-└── README.md
 
----
+```text
+static-code-analyzer-app/
+├── app.py                  # Main Flask application entry point
+├── run.sh                  # Setup and startup script
+├── requirements.txt        # Python dependencies
+├── Procfile                # Gunicorn process file for deployment
+├── .env.example            # Environment variable template
+│
+├── analyzer/               # Core analysis engine
+│   ├── base.py             # Base analyzer class
+│   ├── utils.py            # Shared utility functions
+│   ├── webapp.py           # Web interface logic
+│   └── analyzers/          # Language-specific analyzers
+│       ├── css/            # CSS analysis rules
+│       ├── html/           # HTML analysis rules
+│       ├── javascript/     # JavaScript analysis rules
+│       ├── mongodb/        # MongoDB analysis rules
+│       ├── python/         # Python analysis rules
+│       └── react/          # React analysis rules
+│
+├── templates/              # HTML templates
+│   ├── base.html           # Base layout
+│   ├── index.html          # Upload page
+│   └── result.html         # Results dashboard
+│
+├── static/                 # Static assets
+│   ├── css/                # Stylesheets
+│   └── js/                 # JavaScript files
+│
+├── uploads/                # Uploaded ZIP files (auto-created)
+├── extracted/              # Extracted source code (auto-created)
+├── reports/                # Generated PDF reports (auto-created)
+└── data/                   # Local database / persistence (auto-created)
+```
 
 ## ☁️ Deployment
 
