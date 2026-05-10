@@ -5,14 +5,41 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Flask](https://img.shields.io/badge/Framework-Flask-black)
-![License](https://img.shields.io/badge/Status-Active-success)
+![Status](https://img.shields.io/badge/Status-Active-success)
 ![Platform](https://img.shields.io/badge/Platform-Web-orange)
 
-A powerful multi-language static code analysis platform built with Flask.
+### Multi-Language Static Code Analysis Platform
 
-Analyze source code, detect vulnerabilities, evaluate code quality, generate weighted scores, and export professional PDF reports — all from a web browser.
+Analyze source code, detect vulnerabilities, calculate weighted quality scores, and generate professional PDF reports — all directly from your browser.
 
 </div>
+
+---
+
+# 📚 Table of Contents
+
+- [📖 Overview](#-overview)
+- [🌐 Live Demo](#-live-demo)
+- [✨ Key Features](#-key-features)
+- [🌍 Supported Languages](#-supported-languages)
+- [📊 Analysis Categories](#-analysis-categories)
+- [🏗 System Workflow](#-system-workflow)
+- [🏛 System Architecture](#-system-architecture)
+- [⚙️ Technology Stack](#️-technology-stack)
+- [🛠 Requirements](#-requirements)
+- [⚙️ Installation Guide](#️-installation-guide)
+- [▶️ Run the Application](#️-run-the-application)
+- [🔍 How the Analyzer Works](#-how-the-analyzer-works)
+- [📂 Project Structure](#-project-structure)
+- [☁️ Deployment](#️-deployment)
+- [📤 Output Features](#-output-features)
+- [🧑‍💻 Development Guide](#-development-guide)
+- [📈 Advantages](#-advantages)
+- [⚠️ Current Limitations](#️-current-limitations)
+- [🚀 Future Improvements](#-future-improvements)
+- [🐛 Troubleshooting](#-troubleshooting)
+- [📄 License](#-license)
+- [👤 Author](#-author)
 
 ---
 
@@ -20,17 +47,17 @@ Analyze source code, detect vulnerabilities, evaluate code quality, generate wei
 
 Static Code Analyzer is a lightweight yet powerful web-based application designed to automate source code quality analysis across multiple programming languages.
 
-The platform allows users to upload a ZIP archive containing source code files. The system securely extracts the archive, detects supported programming languages, applies rule-based analysis, calculates weighted quality scores, and generates a professional PDF report containing detailed findings.
+The system allows users to upload a ZIP archive containing source code files. The application securely extracts the archive, detects supported programming languages, applies rule-based analysis, calculates weighted quality scores, and generates professional PDF reports containing detailed findings.
 
-Unlike traditional static analysis tools that require complex setup and local installation, this application is fully browser-based and beginner-friendly.
+Unlike traditional static analysis tools that often require complex local setup and configuration, this platform is fully browser-based, beginner-friendly, and easy to use.
 
-The project was developed to provide an accessible, scalable, and easy-to-use solution for:
+The project was developed to provide an accessible and scalable solution for:
 
 - Students
-- Beginner developers
+- Beginner Developers
 - Freelancers
-- Small development teams
-- Academic projects
+- Small Development Teams
+- Academic & Research Projects
 
 ---
 
@@ -49,16 +76,19 @@ The project was developed to provide an accessible, scalable, and easy-to-use so
 # ✨ Key Features
 
 ## 🔍 Multi-Language Static Analysis
-Analyze source code across multiple programming languages within a single uploaded archive.
+Analyze multiple programming languages within a single uploaded archive.
 
 ## 📦 Secure ZIP Upload & Extraction
 Safely validates and extracts uploaded ZIP files into isolated workspaces.
 
 ## ⚡ Intelligent Language Detection
-Detects programming languages using both extension matching and content-based heuristics.
+Uses:
+- File extension matching
+- Content-based heuristics
+- Syntax pattern recognition
 
 ## 🧠 Rule-Based Analysis Engine
-Identifies:
+Detects:
 - Security vulnerabilities
 - Maintainability issues
 - Performance bottlenecks
@@ -66,25 +96,22 @@ Identifies:
 - Coding style violations
 
 ## 📊 Weighted Scoring System
-Generates meaningful category-wise and overall project quality scores.
+Generates:
+- Category-wise scores
+- File-wise scores
+- Final aggregated project score
 
-## 📄 Professional PDF Report Generation
-Creates downloadable PDF reports containing:
+## 📄 PDF Report Generation
+Creates professional downloadable reports including:
 - Analysis summary
-- File-wise findings
-- Category scores
-- Detailed issue breakdowns
+- Detailed findings
+- Rule violations
+- Recommendations
 
-## 🖥 Clean Dashboard Interface
-Provides a simple and intuitive analysis results dashboard.
+## 🖥 Interactive Dashboard
+Displays structured analysis results through a clean user interface.
 
-## 🌍 Cross-Platform Compatibility
-Runs on:
-- Windows
-- Linux
-- macOS
-
-## ☁️ Cloud Deployment Support
+## ☁️ Cloud Deployment Ready
 Successfully deployed on PythonAnywhere free-tier hosting.
 
 ---
@@ -129,7 +156,7 @@ Successfully deployed on PythonAnywhere free-tier hosting.
           |
           v
 +-------------------+
-| ZIP Extraction    |
+| Secure Extraction |
 +-------------------+
           |
           v
@@ -139,19 +166,19 @@ Successfully deployed on PythonAnywhere free-tier hosting.
           |
           v
 +-------------------+
-| Rule-Based Engine |
+| Rule Processing   |
 +-------------------+
           |
           v
 +-------------------+
-| Score Generation  |
+| Score Calculation |
 +-------------------+
           |
           v
 +-------------------+
 | PDF Report Output |
 +-------------------+
-````
+```
 
 ---
 
@@ -180,14 +207,14 @@ Successfully deployed on PythonAnywhere free-tier hosting.
 
 # ⚙️ Technology Stack
 
-| Technology     | Purpose                   |
-| -------------- | ------------------------- |
-| Python 3.10    | Core Programming Language |
-| Flask          | Backend Web Framework     |
-| Jinja2         | Frontend Templating       |
-| ReportLab      | PDF Report Generation     |
-| Gunicorn       | Production WSGI Server    |
-| PythonAnywhere | Deployment Platform       |
+| Technology | Purpose |
+|---|---|
+| Python 3.10 | Core Programming Language |
+| Flask | Backend Web Framework |
+| Jinja2 | Frontend Templating |
+| ReportLab | PDF Report Generation |
+| Gunicorn | Production WSGI Server |
+| PythonAnywhere | Deployment Platform |
 
 ---
 
@@ -195,10 +222,10 @@ Successfully deployed on PythonAnywhere free-tier hosting.
 
 Before running the project locally, ensure the following are installed:
 
-* Python 3.8 or higher
-* pip
-* Git
-* ZIP archive containing source code files
+- Python 3.8 or higher
+- pip
+- Git
+- ZIP archive containing source code files
 
 ---
 
@@ -214,7 +241,7 @@ cd static-code-analyzer-app
 
 ---
 
-## 2️⃣ Create Virtual Environment
+## 2️⃣ Create a Virtual Environment
 
 ### Windows (PowerShell)
 
@@ -258,11 +285,10 @@ bash run.sh
 ### Native Windows
 
 Use:
+- Git Bash
+- WSL
 
-* Git Bash
-* WSL
-
-Or manually execute the setup commands from `run.sh`.
+Or manually execute the setup commands inside `run.sh`.
 
 ---
 
@@ -283,32 +309,25 @@ http://127.0.0.1:5000
 # 🔍 How the Analyzer Works
 
 ## Step 1 — Upload Source Code
-
 The user uploads a ZIP archive containing project source files.
 
-## Step 2 — Secure Extraction
-
+## Step 2 — Validation & Secure Extraction
 The system validates and securely extracts the archive.
 
 ## Step 3 — Language Detection
-
 Files are identified using:
-
-* File extensions
-* Content heuristics
-* Syntax patterns
+- File extensions
+- Content heuristics
+- Syntax patterns
 
 ## Step 4 — Rule Processing
-
 Files are routed to language-specific analyzers.
 
-## Step 5 — Scoring
-
-Violations contribute weighted penalties to category scores.
+## Step 5 — Score Calculation
+Violations contribute weighted penalties to overall scores.
 
 ## Step 6 — Report Generation
-
-Results are displayed in the dashboard and exported as a PDF report.
+Results are displayed in the dashboard and exported as PDF reports.
 
 ---
 
@@ -357,29 +376,29 @@ static-code-analyzer-app/
 
 The application is deployed using PythonAnywhere.
 
-### Deployment Process
+## Deployment Steps
 
-1. Create PythonAnywhere account
-2. Clone repository
+1. Create a PythonAnywhere account
+2. Clone the repository
 3. Create virtual environment
 4. Install dependencies
 5. Configure Flask application
 6. Configure WSGI file
-7. Reload application
+7. Reload the application
 
 ---
 
 # 📤 Output Features
 
-The system provides:
+The application generates:
 
-* Per-file analysis reports
-* Category-wise scoring
-* Security findings
-* Performance warnings
-* Style recommendations
-* Final project score
-* Downloadable PDF reports
+- Per-file analysis reports
+- Category-wise scoring
+- Security findings
+- Performance warnings
+- Style recommendations
+- Final aggregated score
+- Downloadable PDF reports
 
 ---
 
@@ -387,7 +406,7 @@ The system provides:
 
 ## Add New Rules
 
-Edit:
+Edit files inside:
 
 ```text
 analyzer/analyzers/[language]/
@@ -396,7 +415,7 @@ analyzer/analyzers/[language]/
 ## Add New Language Support
 
 1. Create analyzer module
-2. Define rules
+2. Define rule sets
 3. Implement scoring logic
 4. Register analyzer in routing system
 
@@ -404,23 +423,23 @@ analyzer/analyzers/[language]/
 
 # 📈 Advantages
 
-* Beginner-friendly
-* Browser-based accessibility
-* Lightweight architecture
-* Multi-language support
-* No installation required
-* Professional report generation
-* Fast analysis workflow
+- Beginner-friendly
+- Browser-based accessibility
+- Lightweight architecture
+- Multi-language support
+- No installation required
+- Professional report generation
+- Fast analysis workflow
 
 ---
 
 # ⚠️ Current Limitations
 
-* Limited language support
-* No GitHub integration
-* No real-time collaboration
-* Rule-based analysis only
-* Limited scalability on free hosting
+- Limited language support
+- No GitHub integration
+- No real-time collaboration
+- Rule-based analysis only
+- Limited scalability on free hosting
 
 ---
 
@@ -428,47 +447,44 @@ analyzer/analyzers/[language]/
 
 Planned enhancements include:
 
-* AI-powered code analysis
-* Machine learning integration
-* GitHub/GitLab integration
-* CI/CD pipeline support
-* Docker deployment
-* User authentication system
-* Cloud storage integration
-* Additional programming language support
+- AI-powered code analysis
+- Machine learning integration
+- GitHub/GitLab integration
+- CI/CD pipeline support
+- Docker deployment
+- User authentication system
+- Cloud storage integration
+- Additional language support
 
 ---
 
 # 🐛 Troubleshooting
 
-## `run.sh` not working on Windows
+## `run.sh` Not Working on Windows
 
 Use:
+- Git Bash
+- WSL
 
-* Git Bash
-* WSL
-
-Or manually run setup commands.
+Or manually execute setup commands.
 
 ---
 
 ## ZIP Upload Fails
 
 Ensure:
-
-* The file is `.zip`
-* The archive is not corrupted
-* Source files are readable
+- The file is `.zip`
+- The archive is valid
+- Source files are readable
 
 ---
 
 ## Application Does Not Start
 
 Verify:
-
-* Virtual environment is activated
-* Dependencies are installed
-* Python 3.8+ is installed
+- Virtual environment is activated
+- Dependencies are installed
+- Python 3.8+ is installed
 
 ---
 
@@ -476,7 +492,7 @@ Verify:
 
 This project is intended for educational and academic purposes.
 
-Add your preferred license here if needed.
+You may add your preferred license here.
 
 ---
 
@@ -484,16 +500,14 @@ Add your preferred license here if needed.
 
 ## Mohammed Saif Al Sabah
 
-Static Code Analyzer Project
+Static Code Analyzer Project  
 Department of Computer Science and Engineering
 
 ---
 
 # ⭐ Final Note
 
-Static Code Analyzer demonstrates that a modern, browser-based, multi-language static analysis platform can be built using lightweight technologies while remaining accessible, scalable, and practical for real-world use.
+Static Code Analyzer demonstrates that a modern, browser-based, and multi-language static analysis platform can be developed using lightweight technologies while remaining accessible, scalable, and practical for real-world use.
 
-The project establishes a strong foundation for future expansion into a more advanced and enterprise-level code quality platform.
-
-```
-```
+The project establishes a strong foundation for future expansion into a more advanced enterprise-level code quality platform.
+````
