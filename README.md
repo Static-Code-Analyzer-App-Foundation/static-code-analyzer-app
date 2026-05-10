@@ -497,12 +497,12 @@ You may add your preferred license here.
 
 # 👤 Author
 
-## Mohammed Saif Al Sabah
-
-Static Code Analyzer Project  
-Department of Computer Science and Engineering
-
+1.Mahir Ahmed (Project Manager)
+2.Mohammed Saif Al Sabah 
+3.Maruf
+4.Sindid
 ---
+
 
 # ⭐ Final Note
 
