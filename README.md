@@ -497,11 +497,18 @@ You may add your preferred license here.
 
 # 👤 Author
 
-1.Mahir Ahmed (Project Manager)
-2.Mohammed Saif Al Sabah 
-3.Maruf
-4.Sindid
+<div align="center">
+
+| Name | Role |
+|------|------|
+| Mahir Ahmed | Project Manager |
+| Mohammed Saif Al Sabah | Backend Developer |
+| Maruf | Team Member |
+| Sindid | Team Member |
+
+</div>
 ---
+
 
 
 # ⭐ Final Note
