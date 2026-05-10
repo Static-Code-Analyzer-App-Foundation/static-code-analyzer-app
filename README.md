@@ -1,4 +1,3 @@
-````markdown
 # 🚀 Static Code Analyzer
 
 <div align="center">
@@ -10,7 +9,7 @@
 
 ### Multi-Language Static Code Analysis Platform
 
-Analyze source code, detect vulnerabilities, calculate weighted quality scores, and generate professional PDF reports — all directly from your browser.
+Analyze source code, detect vulnerabilities, calculate weighted quality scores, and generate professional PDF reports directly from your browser.
 
 </div>
 
@@ -18,28 +17,28 @@ Analyze source code, detect vulnerabilities, calculate weighted quality scores, 
 
 # 📚 Table of Contents
 
-- [📖 Overview](#-overview)
-- [🌐 Live Demo](#-live-demo)
-- [✨ Key Features](#-key-features)
-- [🌍 Supported Languages](#-supported-languages)
-- [📊 Analysis Categories](#-analysis-categories)
-- [🏗 System Workflow](#-system-workflow)
-- [🏛 System Architecture](#-system-architecture)
-- [⚙️ Technology Stack](#️-technology-stack)
-- [🛠 Requirements](#-requirements)
-- [⚙️ Installation Guide](#️-installation-guide)
-- [▶️ Run the Application](#️-run-the-application)
-- [🔍 How the Analyzer Works](#-how-the-analyzer-works)
-- [📂 Project Structure](#-project-structure)
-- [☁️ Deployment](#️-deployment)
-- [📤 Output Features](#-output-features)
-- [🧑‍💻 Development Guide](#-development-guide)
-- [📈 Advantages](#-advantages)
-- [⚠️ Current Limitations](#️-current-limitations)
-- [🚀 Future Improvements](#-future-improvements)
-- [🐛 Troubleshooting](#-troubleshooting)
-- [📄 License](#-license)
-- [👤 Author](#-author)
+- [Overview](#-overview)
+- [Live Demo](#-live-demo)
+- [Key Features](#-key-features)
+- [Supported Languages](#-supported-languages)
+- [Analysis Categories](#-analysis-categories)
+- [System Workflow](#-system-workflow)
+- [System Architecture](#-system-architecture)
+- [Technology Stack](#️-technology-stack)
+- [Requirements](#-requirements)
+- [Installation Guide](#️-installation-guide)
+- [Run the Application](#️-run-the-application)
+- [How the Analyzer Works](#-how-the-analyzer-works)
+- [Project Structure](#-project-structure)
+- [Deployment](#️-deployment)
+- [Output Features](#-output-features)
+- [Development Guide](#-development-guide)
+- [Advantages](#-advantages)
+- [Current Limitations](#️-current-limitations)
+- [Future Improvements](#-future-improvements)
+- [Troubleshooting](#-troubleshooting)
+- [License](#-license)
+- [Author](#-author)
 
 ---
 
@@ -51,7 +50,7 @@ The system allows users to upload a ZIP archive containing source code files. Th
 
 Unlike traditional static analysis tools that often require complex local setup and configuration, this platform is fully browser-based, beginner-friendly, and easy to use.
 
-The project was developed to provide an accessible and scalable solution for:
+### Target Users
 
 - Students
 - Beginner Developers
@@ -66,7 +65,7 @@ The project was developed to provide an accessible and scalable solution for:
 <div align="center">
 
 | Platform | URL |
-|---|---|
+|----------|-----|
 | PythonAnywhere | https://mohammedsaifalsabah.pythonanywhere.com |
 
 </div>
@@ -75,19 +74,19 @@ The project was developed to provide an accessible and scalable solution for:
 
 # ✨ Key Features
 
-## 🔍 Multi-Language Static Analysis
+### 🔍 Multi-Language Static Analysis
 Analyze multiple programming languages within a single uploaded archive.
 
-## 📦 Secure ZIP Upload & Extraction
+### 📦 Secure ZIP Upload & Extraction
 Safely validates and extracts uploaded ZIP files into isolated workspaces.
 
-## ⚡ Intelligent Language Detection
+### ⚡ Intelligent Language Detection
 Uses:
 - File extension matching
 - Content-based heuristics
 - Syntax pattern recognition
 
-## 🧠 Rule-Based Analysis Engine
+### 🧠 Rule-Based Analysis Engine
 Detects:
 - Security vulnerabilities
 - Maintainability issues
@@ -95,23 +94,23 @@ Detects:
 - Accessibility problems
 - Coding style violations
 
-## 📊 Weighted Scoring System
+### 📊 Weighted Scoring System
 Generates:
 - Category-wise scores
 - File-wise scores
 - Final aggregated project score
 
-## 📄 PDF Report Generation
+### 📄 PDF Report Generation
 Creates professional downloadable reports including:
 - Analysis summary
 - Detailed findings
 - Rule violations
 - Recommendations
 
-## 🖥 Interactive Dashboard
+### 🖥 Interactive Dashboard
 Displays structured analysis results through a clean user interface.
 
-## ☁️ Cloud Deployment Ready
+### ☁️ Cloud Deployment Ready
 Successfully deployed on PythonAnywhere free-tier hosting.
 
 ---
@@ -119,7 +118,7 @@ Successfully deployed on PythonAnywhere free-tier hosting.
 # 🌍 Supported Languages
 
 | Language | Support |
-|---|---|
+|----------|----------|
 | Python | ✅ |
 | JavaScript | ✅ |
 | HTML | ✅ |
@@ -132,7 +131,7 @@ Successfully deployed on PythonAnywhere free-tier hosting.
 # 📊 Analysis Categories
 
 | Language | Categories |
-|---|---|
+|----------|-------------|
 | Python | Correctness, Efficiency, Maintenance, Security, Style |
 | JavaScript | Efficiency, Maintenance, Security, Style |
 | HTML | Accessibility, Maintenance, Performance, Security |
@@ -208,7 +207,7 @@ Successfully deployed on PythonAnywhere free-tier hosting.
 # ⚙️ Technology Stack
 
 | Technology | Purpose |
-|---|---|
+|------------|---------|
 | Python 3.10 | Core Programming Language |
 | Flask | Backend Web Framework |
 | Jinja2 | Frontend Templating |
@@ -380,10 +379,10 @@ The application is deployed using PythonAnywhere.
 
 1. Create a PythonAnywhere account
 2. Clone the repository
-3. Create virtual environment
+3. Create a virtual environment
 4. Install dependencies
-5. Configure Flask application
-6. Configure WSGI file
+5. Configure the Flask application
+6. Configure the WSGI file
 7. Reload the application
 
 ---
@@ -510,4 +509,3 @@ Department of Computer Science and Engineering
 Static Code Analyzer demonstrates that a modern, browser-based, and multi-language static analysis platform can be developed using lightweight technologies while remaining accessible, scalable, and practical for real-world use.
 
 The project establishes a strong foundation for future expansion into a more advanced enterprise-level code quality platform.
-````
